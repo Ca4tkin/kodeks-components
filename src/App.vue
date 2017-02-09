@@ -12,7 +12,7 @@
     </a>
     <k-dropdown :visible="showDropdown" @close="showDropdown = false">klgklfdfgldlk</k-dropdown>
     </div>
-    <k-document-list :my-data="documents"></k-document-list>
+    <k-document-list :docs-list="documents"></k-document-list>
 
   </div>
 </template>
@@ -40,5 +40,5 @@ export default {
 }
 </script>
 
-<style lang="css" src="./components/styles/fonts.css"></style>
+<style lang="css" src="kodeks-components/src/components/styles/fonts.css"></style>
 <style lang="sass" src="./components/styles/base.sass"></style>
