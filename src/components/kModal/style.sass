@@ -1,0 +1,67 @@
+@import "../styles/variables"
+@import "../styles/mixins"
+
+.overlay
+	z-index: 99998
+	position: fixed
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTExIDc5LjE1ODMyNSwgMjAxNS8wOS8xMC0wMToxMDoyMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjQzRDc5ODEzREJCNTExRTVBOTJGQkRBQTA2RTUwMUY3IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjQzRDc5ODE0REJCNTExRTVBOTJGQkRBQTA2RTUwMUY3Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NDNENzk4MTFEQkI1MTFFNUE5MkZCREFBMDZFNTAxRjciIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NDNENzk4MTJEQkI1MTFFNUE5MkZCREFBMDZFNTAxRjciLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5ZWxNqAAAAD0lEQVR42mJgYGBoAAgwAACFAIHr1UyZAAAAAElFTkSuQmCC')
+	background-repeat: repeat
+	background-position: 0 0
+	width: 100%
+	height: 100%
+	top: 0
+	left: 0
+	opacity: 1
+	overflow: auto
+	&.__vis
+		visibility: visible
+		opacity: 1
+
+.fade-enter-active,
+.fade-leave-active
+	transition: opacity .3s
+.fade-enter, .fade-leave-to
+	opacity: 0  
+
+.modal-w,
+.overlay:after
+	display: inline-block
+	vertical-align: middle
+	width: 99%
+	z-index: 99999
+
+.modal-w
+	padding: 25px 0
+
+.overlay:after
+	content: ''
+	width: 0
+	height: 100%
+
+.modal-cnt
+	position: relative
+	background: $clear
+	box-shadow: 0px 0px 24px -3px rgba(0,0,0,0.69)
+	margin: 0 auto
+
+.modal-close
+	cursor: pointer
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNy4zNzU1OSAyNy40NTQxNiI+PGc+PHBhdGggZD0iTTAgMjYuMTFMMjYuMDMzLjFsMS4zNDMgMS4zNDQtMjYuMDMzIDI2LjAxeiIvPjxwYXRoIGQ9Ik0wIDEuMzQzTDEuMzQzIDBsMjYuMDIyIDI2LjAyLTEuMzQ0IDEuMzQ1eiIvPjwvZz48L3N2Zz4=)
+	background-repeat: no-repeat
+	height: 18px
+	width: 18px
+	background-position: 50% 50%
+	position: absolute
+	top: 10px
+	right: 10px
+	opacity: 0.4
+	transition: all 0.2s ease-in
+	&:hover
+		opacity: 0.9
+
+.modal-close-icon
+	display: block
+	fill: #a3a3a3
+	position: absolute
+	right: 10px
+	z-index: 9999999999
